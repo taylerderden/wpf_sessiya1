@@ -7,7 +7,7 @@ namespace wpf_sessiya1.DbModels;
 public partial class CoreModel : DbContext
 {
     private static CoreModel instanse;
-    public static CoreModel init() 
+    public static CoreModel init()
     {
         if (instanse == null)
         {
@@ -75,6 +75,7 @@ public partial class CoreModel : DbContext
             entity.Property(e => e.Patronymic).HasMaxLength(50);
             entity.Property(e => e.Phone).HasMaxLength(20);
             entity.Property(e => e.RegistrationDate).HasMaxLength(6);
+            entity.Property(e => e.Role).HasMaxLength(45);
 
             entity.HasOne(d => d.GenderCodeNavigation).WithMany(p => p.Clients)
                 .HasForeignKey(d => d.GenderCode)

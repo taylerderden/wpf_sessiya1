@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MySqlConnector;
+using wpf_sessiya1.DbModels;
 using wpf_sessiya1.Windows;
 
 namespace wpf_sessiya1
@@ -36,11 +37,23 @@ namespace wpf_sessiya1
             }
             else
             {
-                User
+                Client client = CoreModel.init().Clients.FirstOrDefault(p => p.Email == tbLogin.Text && p.Role == tbPassword.Text);
+                
+                if (client != null)
+                {
+                    if (client.Role == "user")
+                    {
+                        MessageBox.Show("Are you USER!");
+                    }
+                    else
+                    {
+                        Window_Tables window_Tables = new Window_Tables();
+                        window_Tables.Show();
+                        Hide();
+                    }
+                }
             }
-            Window_Tables window_Tables = new Window_Tables();
-            window_Tables.Show();
-            Hide();
+            
         }
     }
 }

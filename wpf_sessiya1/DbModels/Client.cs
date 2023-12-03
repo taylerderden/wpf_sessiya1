@@ -25,6 +25,8 @@ public partial class Client
 
     public byte[]? Photo { get; set; }
 
+    public string? Role { get; set; }
+
     public virtual ICollection<ClientService> ClientServices { get; set; } = new List<ClientService>();
 
     public virtual Gender GenderCodeNavigation { get; set; } = null!;
