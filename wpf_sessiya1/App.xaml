@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:wpf_sessiya1"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <BitmapImage x:Key="NoPicture" UriSource="Resources/Picture.jpg"/>
     </Application.Resources>
 </Application>

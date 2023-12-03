@@ -6,9 +6,10 @@
       xmlns:local="clr-namespace:wpf_sessiya1.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Service_Page">
+      Title="Service_Page"
+      IsVisibleChanged="AddServices_IsVisibleChanged" Width="600" Height="374">
 
-    <Grid Background="#FFE0BD7B">
+    <Grid Background="#FFE0BD7B" Height="347" Width="600">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition/>
@@ -16,23 +17,44 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
             <TextBlock Text="Поиск" FontSize="20" Foreground="#FFE64B20" FontWeight="Bold" Margin="10,0"/>
-            <TextBox x:Name="tbSearch" TextChanged="tbSearchChanged" TextWrapping="Wrap" Text="" Width="300" FontSize="15"/>
+            <TextBox x:Name="tbSearch" TextChanged="tbSearchChanged" TextWrapping="Wrap" Text="" Width="183" FontSize="15"/>
         </StackPanel>
-        
-        <ComboBox x:Name="cbSort" SelectionChanged="cbSortChanged" HorizontalAlignment="Left" Margin="400,0,0,0" VerticalAlignment="Center" Width="190" FontSize="20" Height="28" RenderTransformOrigin="0.489,0.489"/>
-        <ComboBox x:Name="cbFiltr" SelectionChanged="cbFiltrChanged"  HorizontalAlignment="Left" Margin="610,0,0,0" VerticalAlignment="Center" Width="180" FontSize="20" Height="28"/>
-        
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Image Source="/Resources/Picture.jpg" VerticalAlignment="Top" Height="150" Width="150" Margin="0,10,0,0"/>
-            
-        </Grid>
 
-        <Button Content="Add" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Width="138" Click="Button_AddClick" Height="40" Grid.Row="2"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="495,0,0,0" VerticalAlignment="Center" FontSize="20" Width="138" Click="Button_DelClick" Height="39" Grid.Row="2" RenderTransformOrigin="0.493,0.657"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="652,0,0,0" VerticalAlignment="Center" FontSize="20" Width="138" Click="Button_UpdateClick" Height="39" Grid.Row="2"/>
+        <ComboBox x:Name="cbSort" SelectionChanged="cbSortChanged" HorizontalAlignment="Left" Margin="269,0,0,0" VerticalAlignment="Center" Width="148" FontSize="20" Height="28" RenderTransformOrigin="0.489,0.489"/>
+        <ComboBox x:Name="cbFiltr" SelectionChanged="cbFiltrChanged"  HorizontalAlignment="Left" Margin="422,0,0,0" VerticalAlignment="Center" Width="168" FontSize="20" Height="28"/>
+
+        <ListView Name="lViewService" Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding MainImage, TargetNullValue={StaticResource NoPicture}}" VerticalAlignment="Top" Height="150" Width="150" Margin="0,10,0,0"/>
+
+                        <StackPanel Grid.Column="1">
+                            <TextBlock FontSize="10" Margin="5">
+                                <Run Text="Наименование услуги:"/>
+                                <Run Text="{Binding Title}"/>
+                            </TextBlock>
+                            <TextBlock FontSize="10" Margin="5">
+                                <Run Text="Стоимость услуги:"/>
+                                <Run Text="{Binding Cost}"/>
+                            </TextBlock>
+
+                            <UniformGrid Columns="2">
+                                <Button Content="Delete" Margin="5" FontSize="20" Click="Button_DelClick"/>
+                                <Button Content="Update" Margin="5" FontSize="20" Click="Button_UpdateClick"/>
+                            </UniformGrid>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+        <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Width="447" Click="Button_AddClick" Grid.Row="2" Margin="143,0,0,0"/>
+
     </Grid>
 </Page>

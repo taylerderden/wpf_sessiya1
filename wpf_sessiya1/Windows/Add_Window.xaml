@@ -1,0 +1,19 @@
+﻿<Window x:Class="wpf_sessiya1.Windows.Add_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpf_sessiya1.Windows"
+        mc:Ignorable="d"
+        Title="Add_Window" Height="450" Width="800" IsVisibleChanged="AddServices_IsVisibleChanged">
+    <Grid Background="Ivory">
+        <Button Content="Save" HorizontalAlignment="Left" Margin="296,382,0,0" VerticalAlignment="Top" FontSize="20" Width="180" Click="Button_SaveClick"/>
+
+        <Label Content="Title" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.542,0.536" FontSize="20"/>
+        <Label Content="Cost" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top" FontSize="20"/>
+
+        <TextBox Text="{Binding Title}" HorizontalAlignment="Center" Margin="0,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="780" FontSize="20"/>
+        <TextBox Text="{Binding Cost}" HorizontalAlignment="Center" Margin="0,156,0,0" VerticalAlignment="Top" Width="780" FontSize="20"/>
+
+    </Grid>
+</Window>

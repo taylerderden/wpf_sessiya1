@@ -30,6 +30,14 @@ namespace wpf_sessiya1
 
         private void Authorization_Click(object sender, RoutedEventArgs e)
         {
+            if (tbLogin.Text == null || tbPassword.Text == null)
+            {
+                MessageBox.Show("Заполните данные для входа!");
+            }
+            else
+            {
+                User
+            }
             Window_Tables window_Tables = new Window_Tables();
             window_Tables.Show();
             Hide();

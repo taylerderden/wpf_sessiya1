@@ -7,16 +7,21 @@ namespace wpf_sessiya1.DbModels;
 public partial class CoreModel : DbContext
 {
     private static CoreModel instanse;
-    public CoreModel init() 
+    public static CoreModel init() 
     {
-        if(instanse == null)
+        if (instanse == null)
         {
             instanse = new CoreModel();
         }
+        return instanse;
     }
 
     public CoreModel(DbContextOptions<CoreModel> options)
         : base(options)
+    {
+    }
+
+    public CoreModel()
     {
     }
 

@@ -5,14 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_sessiya1.Windows"
         mc:Ignorable="d"
-        Title="Window_Tables" Height="450" Width="800">
-    <Grid Background="#FFE0BD7B">
+        Title="Window_Tables" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FFE0BD7B" Width="850">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="93*"/>
+            <ColumnDefinition Width="707*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
@@ -21,14 +25,14 @@
             <StackPanel Margin="5">
                 <Button Content="Table" FontSize="15" Margin="5,10" Background="#FFE3AD37" Foreground="#FFE64B20" FontWeight="Bold" Click="ShowService_Click"/>
             </StackPanel>
-            
-            <Frame Name="FrameNav" Grid.Column="1"/> 
+
+            <Frame Name="FrameNav" Grid.Column="1"/>
         </Grid>
-        
+
         <Image Source="/Resources/Picture.jpg" HorizontalAlignment="Left"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="1" Margin="201,0,0,0">
             <TextBlock Text="Главное меню" FontSize="30" HorizontalAlignment="Center" Foreground="#FFE64B20" FontWeight="Bold"/>
         </StackPanel>
-        
+
     </Grid>
 </Window>
