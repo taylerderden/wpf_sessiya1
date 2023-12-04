@@ -24,6 +24,7 @@
 
             <StackPanel Margin="5">
                 <Button Content="Table" FontSize="15" Margin="5,10" Background="#FFE3AD37" Foreground="#FFE64B20" FontWeight="Bold" Click="ShowService_Click"/>
+                <Button Content="Table2" FontSize="15" Background="#FFE3AD37" Foreground="#FFE64B20" FontWeight="Bold" Click="ShowService_Click"/>
             </StackPanel>
 
             <Frame Name="FrameNav" Grid.Column="1"/>
